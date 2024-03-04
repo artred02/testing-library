@@ -5,6 +5,16 @@ export const handlers = [
   rest.post('/greeting', (req, res, ctx) =>
     res(ctx.json({data: {greeting: `Hello ${req.body.subject}`}})),
   ),
+  rest.post('/form', (req, res, ctx) => {
+    return res(
+      ctx.json({
+        data: {
+          title: 'Welcome home',
+          link: 'Fill out the form',
+        },
+      }),
+    )
+  }),
   rest.post('/post/:id', (req, res, ctx) => {
     if (!req.body.title) {
       return res(

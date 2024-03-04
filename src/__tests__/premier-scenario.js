@@ -110,11 +110,10 @@ test('Scénario 1', async () => {
         const titleCongrats = screen.getByRole('heading', { name: /Congrats. You did it./i });
         expect(titleCongrats).toBeInTheDocument();
     });
-
     // 29 - un lien "Go home" est dans le document
-    // const linkGoHomeCongrats = screen.getByRole('link', { name: /Go home/i });
-    // expect(linkGoHomeCongrats).toBeInTheDocument();
+    const linkGoHomeCongrats = screen.getByRole('link', { name: /Go home/i });
+    expect(linkGoHomeCongrats).toBeInTheDocument();
     
     // 30 - l'utilisateur clique sur le lien "Go Home"
-    // userEvent.click(linkGoHomeCongrats);
+    userEvent.click(linkGoHomeCongrats);
 });
